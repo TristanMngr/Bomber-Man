@@ -1,20 +1,11 @@
 import java.util.LinkedList;
 
-
-
-
-
-
 public class Main {
 
     public static LinkedList<Perso> listPerso = new LinkedList<>();
     static Map laby = new Map();
     static LinkedList<Animation> listAnimationBomb = new LinkedList<>();
     static boolean choosePlayer = true;
-
-
-
-
 
     public static void main(String[] args) {
 
@@ -133,8 +124,8 @@ public class Main {
                 GameControl Conf2 = new GameControl(38, 40, 37, 39, 32);
 
 
-                Perso J1 = new Perso("J1", 1.5f, 1.4f, choixPerso1, Conf1,0);
-                Perso J2 = new Perso("J2", 19.5f, 15.4f, choixPerso2, Conf2,1);
+                Perso J1 = new Perso("J1", 1.5f, 1.4f, "black", Conf1,0);
+                Perso J2 = new Perso("J2", 19.5f, 15.4f, "blue", Conf2,1);
 
 
 
@@ -146,18 +137,9 @@ public class Main {
 
                 StdDraw.enableDoubleBuffering();
 
-
-
                 while (!J1.isDie() && !J2.isDie()) {
 
-
                     laby.Affichage();
-
-
-
-
-
-
                     J1.affichageperso(J1.getX(), J1.getY());
                     J1.Deplacement(laby, statPlayers);
                     J1.poserBomb(laby, System.currentTimeMillis() / 1000);
